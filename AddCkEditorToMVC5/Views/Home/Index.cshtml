@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<title>A Simple Page with CKEditor</title>
+@using (Html.BeginForm("ckeditor", "Home", FormMethod.Post, new { style="margin-top: 100px;" }))
+{
+    @Html.Label("The badboy Web Editor")<br />
+    @Html.TextArea("editorplace", new { @id = "editor1" })
+    <input type="submit" value="Submit" id="btnSubmit" />
+    <script>
+        CKEDITOR.replace('editor1');
+    </script>
+}
+
